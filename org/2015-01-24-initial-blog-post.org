@@ -1,0 +1,28 @@
+STARTUP: showall indent
+#+STARTUP: hidestars
+#+BEGIN_HTML
+---
+layout: default
+title: Obligatory Initial Blog Post
+---
+#+END_HTML
+
+* Blogging
+I feel that I am not a very good writer. This of course has to do with
+the fact that I generally haven't practiced in well ... ever. Not that
+my grammar or the structure in which I arrange essays is abhorrent,
+it's just that like many science/tech minded students out there, I've
+been under the illusion that writing is for right-brained English
+majors and not left-brained Engineers.
+
+However, upon beginning my programming career I've discovered that
+most, if not all, good programmers tend to keep up-to-date blogs and
+that I might as well join the party and keep one myself. Most of my
+current blogging efforts will be spent compiling solutions to the
+(in)famous [[http://mitpress.mit.edu/sicp/][Structure and Interpretation of Computer Programs]], so there
+probably won't be too many enlightening posts on other topics for a
+bit.
+
+Also, In case you're interested, this blog is powered (I use that word
+loosely, since it is entirely static) by [[http://jekyllrb.com/][Jekyll]] and [[https://pages.github.com/][Github Pages]] and
+is built using good 'ol [[http://www.gnu.org/software/emacs][Emacs]] and [[http://orgmode.org/][Org-Mode]].
