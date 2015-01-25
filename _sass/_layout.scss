@@ -182,8 +182,7 @@
 }
 
 .inner-bio-pane {
-    width: -webkit-calc(59% - (#{$spacing-unit} / 2));
-    width:         calc(59% - (#{$spacing-unit} / 2));
+    width: 300px;
     float: left;
 }
 

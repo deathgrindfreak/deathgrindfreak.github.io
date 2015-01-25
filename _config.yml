@@ -2,7 +2,7 @@
 title: The Blog Ov Bell 
 email: john.cooper.bell@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  My name is Cooper Bell and I'm a fledgling programmer working 
+  My name is Cooper Bell and I'm a programmer working 
   north of Austin in the small town of Temple, Tx.  I also shred
   to crazy metal tunes when I'm not coding \m/.
 baseurl: "" # the subpath of your site, e.g. /blog/

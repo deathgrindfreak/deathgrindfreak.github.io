@@ -1,0 +1,7 @@
+h1. deathgrindfreak.github.io
+
+This is the data for my blog, it's generated to static html by "Jekyll":http://jekyllrb.com.
+
+h1. License
+
+You're free to use anything in this repo, except specific blog posts and images, which are located in '_posts' and 'images' respectively.
