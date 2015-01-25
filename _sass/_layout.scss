@@ -161,6 +161,38 @@
 /**
  * Page content
  */
+.double-pane {
+    display: block;
+}
+
+.bio-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
+    -webkit-border-radius: 125px;
+    -moz-border-radius: 125px;
+    margin-bottom: $spacing-unit;
+    background: url(http://deathgrindfreak.github.io/images/me.jpg) no-repeat;
+}
+
+.bio-pane {
+    width: -webkit-calc(60% - (#{$spacing-unit} / 2));
+    width:         calc(60% - (#{$spacing-unit} / 2));
+    float: left;
+}
+
+.inner-bio-pane {
+    width: -webkit-calc(59% - (#{$spacing-unit} / 2));
+    width:         calc(59% - (#{$spacing-unit} / 2));
+    float: left;
+}
+
+.post-pane {
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+    float: right;
+}
+ 
 .page-content {
     padding: $spacing-unit 0;
 }
