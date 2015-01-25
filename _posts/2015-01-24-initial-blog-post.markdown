@@ -4,7 +4,6 @@ title: Obligatory Initial Blog Post
 date:   2015-01-24 23:33:00 
 categories: blogging
 ---
-
 # Blogging<a id="sec-1" name="sec-1"></a>
 
 I feel that I am not a very good writer. This of course has to do with
