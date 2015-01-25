@@ -2,7 +2,7 @@
 layout: post
 title: SICP Chapter 2 Solutions
 date:  2015-01-24 23:55:32
-categories: sicp books
+categories: sicp
 ---
 
 These are my notes for the latter half of Chapter 2.  Since I started
