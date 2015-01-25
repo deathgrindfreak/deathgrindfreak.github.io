@@ -6,40 +6,29 @@
 </ul>
 </div>
 </div>
-<p>
-STARTUP: showall indent
-</p>
+
 ---
 layout: default
 title: Obligatory Initial Blog Post
 ---
 
-<div id="outline-container-sec-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Blogging</h2>
-<div class="outline-text-2" id="text-1">
-<p>
+# Blogging<a id="sec-1" name="sec-1"></a>
+
 I feel that I am not a very good writer. This of course has to do with
 the fact that I generally haven't practiced in well &#x2026; ever. Not that
 my grammar or the structure in which I arrange essays is abhorrent,
 it's just that like many science/tech minded students out there, I've
 been under the illusion that writing is for right-brained English
 majors and not left-brained Engineers.
-</p>
 
-<p>
 However, upon beginning my programming career I've discovered that
 most, if not all, good programmers tend to keep up-to-date blogs and
 that I might as well join the party and keep one myself. Most of my
 current blogging efforts will be spent compiling solutions to the
-(in)famous <a href="http://mitpress.mit.edu/sicp/">Structure and Interpretation of Computer Programs</a>, so there
+(in)famous [Structure and Interpretation of Computer Programs](http://mitpress.mit.edu/sicp/), so there
 probably won't be too many enlightening posts on other topics for a
 bit.
-</p>
 
-<p>
 Also, In case you're interested, this blog is powered (I use that word
-loosely, since it is entirely static) by <a href="http://jekyllrb.com/">Jekyll</a> and <a href="https://pages.github.com/">Github Pages</a> and
-is built using good 'ol <a href="http://www.gnu.org/software/emacs">Emacs</a> and <a href="http://orgmode.org/">Org-Mode</a>.
-</p>
-</div>
-</div>
+loosely, since it is entirely static) by [Jekyll](http://jekyllrb.com/) and [Github Pages](https://pages.github.com/) and
+is built using good 'ol [Emacs](http://www.gnu.org/software/emacs) and [Org-Mode](http://orgmode.org/).
