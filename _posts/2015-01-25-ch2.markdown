@@ -7,10 +7,28 @@ categories: sicp
 
 These are my notes for the latter half of Chapter 2.  Since I started
 using org mode quite a bit after I began SICP, I'll have to come back
-and transcribe the previous sections at a later time (Like that's ever 
-going to happen).
+and transcribe the previous sections at a later time.
 
-## 2.2.3 Sequences as Conventional Interfaces<a id="sec-1-1" name="sec-1-1"></a>
+2 Building Abstractions With Data<a id="sec-1" name="sec-1"></a>
+----------------------------------------------------------------
+
+## 2.1  Introduction to Data Abstraction<a id="sec-1-1" name="sec-1-1"></a>
+
+### 2.1.1  Example: Arithmetic Operations for Rational Numbers<a id="sec-1-1-1" name="sec-1-1-1"></a>
+
+### 2.1.2  Abstraction Barriers<a id="sec-1-1-2" name="sec-1-1-2"></a>
+
+### 2.1.3  What Is Meant by Data?<a id="sec-1-1-3" name="sec-1-1-3"></a>
+
+### 2.1.4  Extended Exercise: Interval Arithmetic<a id="sec-1-1-4" name="sec-1-1-4"></a>
+
+## 2.2  Hierarchical Data and the Closure Property<a id="sec-1-2" name="sec-1-2"></a>
+
+### 2.2.1  Representing Sequences<a id="sec-1-2-1" name="sec-1-2-1"></a>
+
+### 2.2.2  Hierarchical Structures<a id="sec-1-2-2" name="sec-1-2-2"></a>
+
+### 2.2.3 Sequences as Conventional Interfaces<a id="sec-1-2-3" name="sec-1-2-3"></a>
 
 One of the most important concepts in this section is the concept of
 the "signal chain" as illustrated in fig. 2.7.  Of course this is
@@ -18,12 +36,12 @@ really a visualization of how programs are more conceptually tractable
 when they are modularized appropriately (a concept that is hammered on
 in the famous ["Why Functional Programming Matters"](http://worrydream.com/refs/Hughes-WhyFunctionalProgrammingMatters.pdf) paper).
 
-### Sequence Operations<a id="sec-1-1-1" name="sec-1-1-1"></a>
+#### Sequence Operations<a id="sec-1-1-1" name="sec-1-1-1"></a>
 
 As the title suggests, this sub-section takes on the task of breaking
 down programs into sub-tasks using the signal chain metaphor.
 
-#### Exercise 2.33
+##### Exercise 2.33
 
 The best explanation for how to define functions in terms of folds (or
 just writing folds in the first place) actually came from the
@@ -96,7 +114,7 @@ leaves in any tree:
                        t)))
 {% endhighlight %}
 
-#### Exercise 2.36
+##### Exercise 2.36
 
 I had to stare at an open buffer for a few minutes until the
 solution for this one hit me.  Since we're accumulating only the first
@@ -114,7 +132,7 @@ in the process).  Add, rinse, repeat.
                 (accumulate-n op init (map cdr seqs)))))
 {% endhighlight %}
 
-#### Exercise 2.37
+##### Exercise 2.37
 
 These aren't too bad if you're familiar with some standard matrix
 operations.
@@ -150,7 +168,7 @@ transposed matrix to the right.
              m)))
 {% endhighlight %}
 
-#### Exercise 2.38
+##### Exercise 2.38
 
 The values for the expressions are:
 
@@ -179,7 +197,7 @@ This is of course due to the fact that (+ a b) `= (+ b a). thus for
 all all op such that (op a b) =` (op b a), foldr will produce the same
 result as foldl.
 
-#### Exercise 2.39
+##### Exercise 2.39
 
 It immediately comes to mind that we should use some sort of list
 operation (no duh) like cons or list, since we're not reducing, but
@@ -207,12 +225,12 @@ the desired procedure (that's one hell of a run-on sentence).
       (fold-left (lambda (x y) (list y x)) nil sequence))
 {% endhighlight %}
 
-### Nested Mappings<a id="sec-1-1-2" name="sec-1-1-2"></a>
+#### Nested Mappings<a id="sec-1-1-2" name="sec-1-1-2"></a>
 
 This section covers more on sequence operations, mainly on the subject
 of nested mappings and their applications.
 
-#### Exercise 2.40
+##### Exercise 2.40
 
 I'm not completely sure why they stuck this one in here, mainly since
 they did the work for us at the very beginning of the sub-section
@@ -235,7 +253,7 @@ And prime-pairs becomes:
            (filter prime-sum? (unique-pairs n))))
 {% endhighlight %}
 
-#### Exercise 2.41
+##### Exercise 2.41
 
 You can guess the structure of this one pretty easily, though it
 unintuitively (at least for me at first) requires two flatmaps, with
@@ -252,7 +270,7 @@ the last one being the only normal map.
                (enumerate-interval 1 n)))
 {% endhighlight %}
 
-#### Exercise 2.42
+##### Exercise 2.42
 
 I'm actually pretty stoked about this problem, even though took me an
 embarrassing amount of time to complete. But I completed it without
@@ -367,19 +385,19 @@ I'm sure that there are much shorter ways to solve this problem, but
 I'm pretty happy with the way it performs (it can generate the 10x10
 solution in a second or so), so I'll stand behind it. 
 
-#### Exercise 2.43
+##### Exercise 2.43
 
 TODO 
 
 ## 2.2.4 Example: A Picture Language<a id="sec-1-2" name="sec-1-2"></a>
 
-### The picture language<a id="sec-1-2-1" name="sec-1-2-1"></a>
+#### The picture language<a id="sec-1-2-1" name="sec-1-2-1"></a>
 
 This is how abstraction works at its best.  The simply fact that the
 only object we have to deal with is the 'painter' shows how powerful
 of a concept it can be.
 
-#### Exercise 2.44
+##### Exercise 2.44
 
 The up-split is almost identical in form to the right split, with the
 interchange of the beside and below functions. 
@@ -392,9 +410,17 @@ interchange of the beside and below functions.
             (below painter (beside smaller smaller)))))
 {% endhighlight %}
 
-### Higher-order operations<a id="sec-1-2-2" name="sec-1-2-2"></a>
+#### Higher-order operations<a id="sec-1-2-2" name="sec-1-2-2"></a>
 
-#### Exercise 2.45
+This section extends the previous section by introducing a couple of
+higher-order functions (one of them written by us in the next
+exercise) that abstract most of our previously written functions.
+
+##### Exercise 2.45
+
+As was done with square-of-four, we need to create a function that
+returns a function.  However unlike square-of-four, the function that
+we return needs to take in two inputs: painter and n.
 
 {% highlight scheme %}
     (define (split left-op right-op)
@@ -405,8 +431,172 @@ interchange of the beside and below functions.
               (left-op painter (right-op smaller smaller))))))
 {% endhighlight %}
 
-### Frames<a id="sec-1-2-3" name="sec-1-2-3"></a>
 
-#### Exercise 2.46
+####Frames
 
-#### Exercise 3.47
+#####Exercise 2.46
+
+The most natural way to represent a vector is a simple list.  Thus our
+constructor becomes:
+
+{% highlight scheme %}
+    (define (make-vect vx vy)
+      (list vx vy))
+{% endhighlight %}
+
+To get the x coordinate, simply get the car of the list:
+
+{% highlight scheme %}
+    (define (xcor-vect v)
+      (car v))
+{% endhighlight %}
+
+To get the y coordinate, simply get the cadr of the list:
+
+{% highlight scheme %}
+    (define (ycor-vect v)
+      (cadr v))
+{% endhighlight %}
+
+Using similar list operations, as well as our previously defined
+definitions, we can construct the add-vect, sub-vect and scale-vect
+operations:
+
+{% highlight scheme %}
+    (define (add-vect v1 v2)
+      (list (+ (xcor-vect v1)
+               (xcor-vect v2))
+            (+ (ycor-vect v1)
+               (ycor-vect v2))))
+               
+    (define (sub-vect v1 v2)
+      (list (- (xcor-vect v1)
+               (xcor-vect v2))
+            (- (ycor-vect v1)
+               (ycor-vect v2))))
+               
+    (define (scale-vect s v)
+      (list (* s (xcor-vect v))
+            (* s (ycor-vect v))))
+{% endhighlight %}
+
+#####Exercise 2.47
+
+For the first constructor, the selectors are:
+
+{% highlight scheme %}
+    (define (edge1-frame frame)
+      (car frame))
+    
+    (define (edge2-frame frame)
+      (cadr frame))
+    
+    (define (origin-frame frame)
+      (caddr frame))
+{% endhighlight %}
+
+For the second:
+
+{% highlight scheme %}
+    (define (edge1-frame frame)
+      (car frame))
+    
+    (define (edge2-frame frame)
+      (cadr frame))
+    
+    (define (origin-frame frame)
+      (cddr frame))
+{% endhighlight %}
+
+####Painters
+
+#####Exercise 2.48
+
+The most natural way to represent a segment is a list of two vectors.
+
+{% highlight scheme %}
+    (define (make-segment sv ev)
+      (list sv ev))
+{% endhighlight %}
+
+The selectors then become:
+
+{% highlight scheme %}
+    (define (start-segment segment)
+      (car segment))
+    
+    (define (end-segment segment)
+      (cadr segment))
+{% endhighlight %}
+
+#####Exercise 2.49
+
+a. In order to outline the frame we need four vectors, one pointing
+to each corner of the parallelogram that outlines the frame.  I've
+used let\* here, even though I don't think it's been define in the book
+(you can do it with a normal let, but it would take four nested lets).
+If you're unfamiliar with the various let special forms that scheme
+offers, I recommend reading up on them [here](http://www.ccs.neu.edu/home/dorai/t-y-scheme/t-y-scheme-Z-H-7.html#node_chap_5).
+
+{% highlight scheme %}
+    (define (paint-outline frame)
+      (let* ((origin (origin-frame frame))
+             (edge1 (add-vect origin (edge1-frame frame)))
+             (edge2 (add-vect origin (edge2-frame frame)))
+             (opposite-origin (add-vect edge1 edge2)))
+        ((segments->painter (list (make-segment origin edge1)
+                                  (make-segment origin edge2)
+                                  (make-segment edge1 opposite-origin)
+                                  (make-segment edge2 opposite-origin)))
+         frame)))
+{% endhighlight %}
+
+b. Here we only need to connect the vectors constructed in the let\* of
+the previous exercise in a slightly different manner.
+
+{% highlight scheme %}
+    (define (paint-x frame)
+      (let* ((origin (origin-frame frame))
+             (edge1 (add-vect origin (edge1-frame frame)))
+             (edge2 (add-vect origin (edge2-frame frame)))
+             (opposite-origin (add-vect edge1 edge2)))
+        ((segments->painter (list (make-segment origin opposite-origin)
+                                  (make-segment edge1 edge2)))
+         frame)))
+{% endhighlight %}
+
+c. To find the midpoint vector of two vectors we merely apply the transformation:
+
+    midpoint (x1, y1) (x2, y2) -> ((x1 + x2) / 2, (y1 + y2) / 2)
+
+Or in terms of scheme.
+
+{% highlight scheme %}
+    (define (midpoint v1 v2)
+      (scale-vect 0.5 (add-vect v1 v2)))
+{% endhighlight %}
+
+The two let forms here are unnecessary, but are there to make the
+expression more readable.
+
+{% highlight scheme %}
+    (define (paint-diamond frame)
+      (let* ((origin (origin-frame frame))
+             (edge1 (add-vect origin (edge1-frame frame)))
+             (edge2 (add-vect origin (edge2-frame frame)))
+             (opposite-origin (add-vect edge1 edge2)))
+        (let ((origin-edge1 (midpoint origin edge1))
+              (origin-edge2 (midpoint origin edge2))
+              (edge1-opp (midpoint edge1 opposite-origin))
+              (edge2-opp (midpoint edge2 opposite-origin)))
+    
+          ((segments->painter (list (make-segment origin-edge1 origin-edge2)
+                                    (make-segment origin-edge1 edge1-opp)
+                                    (make-segment origin-edge2 edge2-opp)
+                                    (make-segment edge1-opp edge2-opp)))
+           frame))))
+{% endhighlight %}
+
+d.
+
+####Transforming and combining painters
